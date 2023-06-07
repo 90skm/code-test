@@ -8,7 +8,6 @@ body {
 }
 
 .left-column {   
-  float: left;
   width: 100%;
   padding: 0px 150px;
 }
@@ -39,7 +38,10 @@ a{
 }
 .left-content{
 	width:70%;
-	float:left;
+	
+}
+.container{
+	display: flex;
 }
 @media screen and (max-width: 800px) {
   .left-column {   
@@ -53,8 +55,11 @@ img{
 }
 .left-content {
     width: 100%;
-    float: left;
+    
 } 
+.container{
+	display: flex;
+}
 }
 .category{
 	font-size:14px;
@@ -69,7 +74,5 @@ img{
     color: #606669;
 	text-align: justify;
 }
-.border-line{
-	border-bottom: 2px solid #dcdcdc;
-}
+
 
