@@ -1,34 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Coding Test</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/script.js" type="text/javascript"></script>
 </head>
 <body>
-<script type="text/javascript">
-fetch('json/code-test.json')
-      .then(function (response) {
-               return response.json();
-				 console.log(response);
-            })
-            .then(function (data) {
-              // console.log(data.articles);
-			   var mainContainer = document.getElementById("jsondata");
-            for (var i = 0; i < data.articles.length; i++) {
-			//console.log("aa",data.articles[i].primarySectionRouteName
-			var div = document.createElement("div");
-			//console.log(div);
-                 div.innerHTML = '<div class="leftcontent"><h5 class="category"><a href="'+data.articles[i].link+'" target="_blank">'+data.articles[i].primarySectionRouteName+'</h5></a><h2 class="heading-class">'+data.articles[i].headline+'</h2><p class="description">'+data.articles[i].standfirst+'.</p></div><div class="rightcontent"><div class="fakeimg" ><img src="'+data.articles[i].thumbnail.src+'" alt="'+data.articles[i].thumbnail.title+'"></div></div><div class="borderline"></div>';
-                mainContainer.appendChild(div);
-            }
-			   //append(data);
-            })
-            .catch(function (err) {
-                console.log(err);
-            });
-</script>
 <div class="row">
-  <div class="leftcolumn">
+  <div class="left-column">
     <div class="card" id="jsondata">
     </div>
   </div>
