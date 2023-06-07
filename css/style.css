@@ -7,72 +7,69 @@ body {
   background: #000;
 }
 
-.left-column {   
+.leftcolumn-class {
   width: 100%;
   padding: 0px 150px;
 }
 
-.fake-img {
-    width: 100%;
-    padding: 20px;
-  
+.fakeimg-class {
+  width: 100%;
+  padding: 20px;
 }
-img{
-	margin-left: 50px;
-	height: 200px;
+img {
+  margin-left: 50px;
+  height: 200px;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
-.card {
-   background-color: #FFFFFF;
-   padding: 20px;
-   margin-top: 20px;
+.card-class {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-top: 20px;
 }
 
 .row:after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
-
 }
-.left-content{
-	width:70%;
-	
+.leftcontent-class {
+  width: 70%;
 }
-.container{
-	display: flex;
+.container-class {
+  display: flex;
 }
 @media screen and (max-width: 800px) {
-  .left-column {   
+  .leftcolumn-class {
     width: 100%;
-    padding: 0;
+    padding: 0px;
   }
-img{
-	margin-left: -13px;
+  img {
+    margin-left: -13px;
     width: 100%;
     height: 100%;
-}
-.left-content {
+  }
+  .leftcontent-class {
     width: 100%;
-    
-} 
-.container{
-	display: flex;
+  }
+  .container-class {
+    display: flex;
+  }
 }
+.category-class {
+  font-size: 14px;
+  color: #0059bf;
 }
-.category{
-	font-size:14px;
-    color: #0059bf;
+.heading-class {
+  font-size: 24px;
+  color: #000;
 }
-.heading-class{
-	font-size:24px;
-    color: #000000 ;
+.description-class {
+  font-size: 16px;
+  color: #606669;
+  text-align: justify;
 }
-.description{
-	font-size:16px;
-    color: #606669;
-	text-align: justify;
+.error-class {
+  color: #ff0000;
 }
-
-
