@@ -9,7 +9,7 @@ body {
 
 .leftcolumn-class {
   width: 100%;
-  padding: 0px 150px;
+  padding: 0 150px;
 }
 
 .fakeimg-class {
@@ -43,7 +43,7 @@ a {
 @media screen and (max-width: 800px) {
   .leftcolumn-class {
     width: 100%;
-    padding: 0px;
+    padding: 0;
   }
   img {
     margin-left: -13px;
