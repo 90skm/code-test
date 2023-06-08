@@ -21,6 +21,7 @@ async function getData() {
         mainContainer.appendChild(div); /* Append the html in main container*/
       } else {
         for (var i = 0; i < data.articles.length; i++) {
+          /* Start loop */
           var div = document.createElement('div');
           div.innerHTML =
             '<div class="container-class"><div class="leftcontent-class"><h5 class="category-class"><a href="' +
@@ -39,7 +40,7 @@ async function getData() {
             data.articles[i].thumbnail.title +
             '"></div></div></div><hr>';
           mainContainer.appendChild(div); /* Append the html in main container*/
-        }
+        } /* End loop */
       }
     })
     .catch(function (err) {
