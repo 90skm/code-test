@@ -7,20 +7,25 @@
 @params createElement - Create a empty div.
 @params Object.keys(data).length - check json file empty or not.
 @params innerHTML - append the html in main container div.
+@params error.json file inside the error folder all errors in this file.
 */
 
-let get_sales_data = async () => {
+import errorMessage from '../error/error.json' assert { type: 'json' };
+
+async function getData() {
+  let errorEmpty = errorMessage.EMPTY;
   await fetch('json/code-test.json')
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       var mainContainer = document.getElementById('jsondata');
-
       if (!Object.keys(data).length) {
         var div = document.createElement('div');
         div.innerHTML =
-          '<div class="container-class"><div class="leftcontent-class"><h5 class="error-class">No Data Found</h5></div></div>';
+          '<div class="container-class"><div class="leftcontent-class"><h5 class="error-class">' +
+          errorEmpty.error +
+          '</h5></div></div>';
         mainContainer.appendChild(div);
       } else {
         for (var i = 0; i < data.articles.length; i++) {
@@ -46,10 +51,13 @@ let get_sales_data = async () => {
       }
     })
     .catch(function (err) {
+      var mainContainer = document.getElementById('jsondata');
       var div = document.createElement('div');
       div.innerHTML =
-        '<div class="container-class"><div class="leftcontent-class"><h5 class="error-class">Something Went Wrong.</h5></div></div>';
+        '<div class="container-class"><div class="leftcontent-class"><h5 class="error-class">' +
+        errorEmpty.error +
+        '</h5></div></div>';
       mainContainer.appendChild(div);
     });
-};
-get_sales_data();
+}
+getData();
