@@ -12,7 +12,7 @@ async function getData() {
           'jsondata'
         ); /* Main container appends the data on HTML.*/
       if (!Object.keys(data).length) {
-        /* Checking the length of data.*/
+        /* Checking the length of json data.*/
         var div = document.createElement('div');
         div.innerHTML =
           '<div class="container-class"><div class="leftcontent-class"><h5 class="error-class">' +
