@@ -13,15 +13,15 @@ async function getData() {
         ); /* Main container appends the data on HTML.*/
       if (!Object.keys(data).length) {
         /* Checking the length of data.*/
-        var div = document.createElement('div'); /* Creating an empty div.*/
+        var div = document.createElement('div');
         div.innerHTML =
           '<div class="container-class"><div class="leftcontent-class"><h5 class="error-class">' +
           errorEmpty.error +
-          '</h5></div></div>'; /* Append the data in empty div*/
+          '</h5></div></div>';
         mainContainer.appendChild(div); /* Append the html in main container*/
       } else {
         for (var i = 0; i < data.articles.length; i++) {
-          var div = document.createElement('div'); /* Creating an empty div.*/
+          var div = document.createElement('div');
           div.innerHTML =
             '<div class="container-class"><div class="leftcontent-class"><h5 class="category-class"><a href="' +
             data.articles[i].link +
@@ -37,7 +37,7 @@ async function getData() {
             data.articles[i].thumbnail.src +
             '" alt="' +
             data.articles[i].thumbnail.title +
-            '"></div></div></div><hr>'; /* Append the data in empty div*/
+            '"></div></div></div><hr>';
           mainContainer.appendChild(div); /* Append the html in main container*/
         }
       }
@@ -47,11 +47,11 @@ async function getData() {
         document.getElementById(
           'jsondata'
         ); /* Main container appends the data on HTML.*/
-      var div = document.createElement('div'); /* Creating an empty div.*/
+      var div = document.createElement('div');
       div.innerHTML =
         '<div class="container-class"><div class="leftcontent-class"><h5 class="error-class">' +
         errorEmpty.error +
-        '</h5></div></div>'; /* Append the data in empty div*/
+        '</h5></div></div>';
       mainContainer.appendChild(div); /* Append the html in main container*/
     });
 }
