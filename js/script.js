@@ -1,35 +1,27 @@
-/* 
-@params fetch - get the data on json file in code-test.json.
-@params async - run the api asynchronously.
-@params await - wait the data comes from json file.
-@params appendChild - this function append the multiple child dive in main div.
-@params mainContainer - this is container append all the data on html using id.
-@params createElement - Create a empty div.
-@params Object.keys(data).length - check json file empty or not.
-@params innerHTML - append the html in main container div.
-@params error.json file inside the error folder all errors in this file.
-*/
-
-import errorMessage from '../error/error.json' assert { type: 'json' };
+import errorMessage from '../error/error.json' assert { type: 'json' }; /* Imported the error file */
 
 async function getData() {
-  let errorEmpty = errorMessage.EMPTY;
-  await fetch('json/code-test.json')
+  let errorEmpty = errorMessage.EMPTY; /* Getting the error message as input */
+  await fetch('json/code-test.json') /* Fetching the json data as input */
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      var mainContainer = document.getElementById('jsondata');
+      /* Success Part */ var mainContainer =
+        document.getElementById(
+          'jsondata'
+        ); /* Main container appends the data on HTML.*/
       if (!Object.keys(data).length) {
-        var div = document.createElement('div');
+        /* Checking the length of data.*/
+        var div = document.createElement('div'); /* Creating an empty div.*/
         div.innerHTML =
           '<div class="container-class"><div class="leftcontent-class"><h5 class="error-class">' +
           errorEmpty.error +
-          '</h5></div></div>';
-        mainContainer.appendChild(div);
+          '</h5></div></div>'; /* Append the data in empty div*/
+        mainContainer.appendChild(div); /* Append the html in main container*/
       } else {
         for (var i = 0; i < data.articles.length; i++) {
-          var div = document.createElement('div');
+          var div = document.createElement('div'); /* Creating an empty div.*/
           div.innerHTML =
             '<div class="container-class"><div class="leftcontent-class"><h5 class="category-class"><a href="' +
             data.articles[i].link +
@@ -45,19 +37,22 @@ async function getData() {
             data.articles[i].thumbnail.src +
             '" alt="' +
             data.articles[i].thumbnail.title +
-            '"></div></div></div><hr>';
-          mainContainer.appendChild(div);
+            '"></div></div></div><hr>'; /* Append the data in empty div*/
+          mainContainer.appendChild(div); /* Append the html in main container*/
         }
       }
     })
     .catch(function (err) {
-      var mainContainer = document.getElementById('jsondata');
-      var div = document.createElement('div');
+      /* Error Part */ var mainContainer =
+        document.getElementById(
+          'jsondata'
+        ); /* Main container appends the data on HTML.*/
+      var div = document.createElement('div'); /* Creating an empty div.*/
       div.innerHTML =
         '<div class="container-class"><div class="leftcontent-class"><h5 class="error-class">' +
         errorEmpty.error +
-        '</h5></div></div>';
-      mainContainer.appendChild(div);
+        '</h5></div></div>'; /* Append the data in empty div*/
+      mainContainer.appendChild(div); /* Append the html in main container*/
     });
 }
 getData();
