@@ -54,7 +54,25 @@ a {
     width: 100%;
   }
   .container-class {
-    display: flex;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .leftcolumn-class {
+    width: 100%;
+    padding: 0;
+  }
+  img {
+    margin-left: -13px;
+    width: 100%;
+    height: 100%;
+  }
+  .leftcontent-class {
+    width: 100%;
+  }
+  .container-class {
+    display: block;
   }
 }
 .category-class {
